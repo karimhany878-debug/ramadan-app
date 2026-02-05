@@ -1,0 +1,37 @@
+﻿name: Build & Release APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (مثال: v0.1.0)"
+        required: true
+        default: "v0.1.0"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - run: flutter pub get
+      - run: flutter build apk --release
+
+      - name: Release APK
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag }}
+          name: Release ${{ inputs.tag }}
+          files: build/app/outputs/flutter-apk/app-release.apk
