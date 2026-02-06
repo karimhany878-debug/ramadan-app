@@ -1,7 +1,7 @@
-name: amoon_worship
-description: Offline worship companion (offline)
+﻿name: amoon_worship
+description: Ramadan Kareem (offline) - Cairo prayer times + content tabs
 publish_to: none
-version: 0.1.0+1
+version: 0.2.0+2
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -9,19 +9,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6
-  shared_preferences: ^2.2.3
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+  adhan: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/data/quran_sample.json
-    - assets/data/adhkar_sample.json
-    - assets/data/sunnah_sample.json
-    - assets/data/hadith_sample.json
-    - assets/data/dua_sample.json
+    - assets/images/logo.png
