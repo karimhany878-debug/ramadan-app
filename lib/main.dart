@@ -659,9 +659,11 @@ String prayerNameAr(Prayer p) {
       return 'العصر';
     case Prayer.maghrib:
       return 'المغرب';
+    case Prayer.ishaBefore:
     case Prayer.isha:
       return 'العشاء';
-    case Prayer.none:
+    case Prayer.ishaBefore:
+    case Prayer.isha:
       return '';
   }
 }
@@ -1021,4 +1023,5 @@ class _LibItem {
   final IconData icon;
   final VoidCallback onTap;
 }
+
 
