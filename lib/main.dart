@@ -159,13 +159,13 @@ class AppSettings {
     CalculationParameters params;
     switch (methodKey) {
       case 'muslim_world_league':
-        params = CalculationMethodParameters.muslim_world_league();
+        params = CalculationMethodParameters.muslimWorldLeague()();
         break;
       case 'karachi':
         params = CalculationMethodParameters.karachi();
         break;
       case 'umm_al_qura':
-        params = CalculationMethodParameters.umm_al_qura();
+        params = CalculationMethodParameters.ummAlQura()();
         break;
       case 'dubai':
         params = CalculationMethodParameters.dubai();
@@ -180,10 +180,10 @@ class AppSettings {
         params = CalculationMethodParameters.singapore();
         break;
       case 'north_america':
-        params = CalculationMethodParameters.north_america();
+        params = CalculationMethodParameters.northAmerica()();
         break;
       case 'turkey':
-        params = CalculationMethodParameters.turkey();
+        params = CalculationMethodParameters.turkiye()();
         break;
       case 'tehran':
         params = CalculationMethodParameters.tehran();
@@ -1021,3 +1021,4 @@ class _LibItem {
   final IconData icon;
   final VoidCallback onTap;
 }
+
